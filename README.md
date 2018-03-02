@@ -1,7 +1,10 @@
 # Smash Disc4d
 
-Discord integration for Smash for Wii U. 
+Discord integration for Smash for Wii U. Uses a class from TCPGecko https://github.com/Chadderz121/tcp-gecko-dotnet.
 
+Thanks to Chadderz for TCPGecko dot NET, DSX8 for converting textures, and offsets and info from Toad Stool.
+
+Info on how it was made here: https://medium.com/@jam1garner/how-i-added-discord-integration-to-smash-4-53130a8d665e
 
 ### Usage
 
