@@ -27,14 +27,19 @@ namespace SmashDiscordRichPresence
                 Console.WriteLine("Failed to connect.");
                 return;
             }
+            int player1 = 0, player2 = 0, stage = 0, mode = 0;
 
             while (true)
             {
                 // Grab some values from memory
-                int player1 = (int)gecko.peek(0x1098EDEB) & 0xFF;
-                int player2 = (int)gecko.peek(0x1098EE6B) & 0xFF;
-                int stage = (int)gecko.peek(0x1097577F) & 0xFF;
-                int mode = (int)gecko.peek(0x1098B2AB) & 0xFF;
+                try
+                {
+                    player1 = (int)gecko.peek(0x1098EDEB) & 0xFF;
+                    player2 = (int)gecko.peek(0x1098EE6B) & 0xFF;
+                    stage = (int)gecko.peek(0x1097577F) & 0xFF;
+                    mode = (int)gecko.peek(0x1098B2AB) & 0xFF;
+                }
+                catch {} // 3DS mode crashes for some reason idk
 
                 if (Info.IN_GAME_MODES.Contains(mode) && Info.STAGE_IMAGE_KEYS.ContainsKey(stage))
                 {
