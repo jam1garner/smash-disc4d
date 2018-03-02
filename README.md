@@ -1,4 +1,4 @@
-# smash-disc4d
+# Smash Disc4d
 
 Discord integration for Smash for Wii U. 
 
