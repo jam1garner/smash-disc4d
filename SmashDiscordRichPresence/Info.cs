@@ -184,7 +184,8 @@ namespace SmashDiscordRichPresence
             { 0x6B, "Trophy Pose BG 4" },
             { 0x65, "Trophy Award Platform" },
             { 0x66, "Trophy Hoard Platform" },
-            { 0x6D, "Trophy Rush Stage 2P" }
+            { 0x6D, "Trophy Rush Stage 2P" },
+            { 0x64, "Custom Stage" }
         };
 
         public static Dictionary<int, string> CHARACTER_NAMES = new Dictionary<int, string>()
@@ -360,7 +361,8 @@ namespace SmashDiscordRichPresence
             { 124, "midgar_f" },
             { 125, "midgar_f" },
             { 126, "umbra_f" },
-            { 127, "umbra_f" }
+            { 127, "umbra_f" },
+            { 100, "stage_maker" }
         };
 
         public static List<int> SINGLEPLAYER_MODES = new List<int>()
