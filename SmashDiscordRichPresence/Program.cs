@@ -59,12 +59,6 @@ namespace SmashDiscordRichPresence
                     players[7] = (int)gecko.peek(0x1098F16B) & 0xFF;
                     stage = (int)gecko.peek(0x1097577F) & 0xFF;
                     mode = (int)gecko.peek(0x1098B2AB) & 0xFF;
-                    for (int i = 0; i < 8; i++)
-                    {
-                        Console.WriteLine($"Player {i + 1} - {players[i]}");
-                    }
-                    Console.WriteLine($"Stage - {stage}");
-                    Console.WriteLine($"Mode - {mode}");
                 }
                 catch { } // 3DS mode crashes for some reason idk
                 
