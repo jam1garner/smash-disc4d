@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -9,11 +10,30 @@ namespace SmashDiscordRichPresence
 {
     class Program
     {
+        static int z(int x)
+        {
+            if (x != 0xFF)
+                return 1;
+            return 0;
+        }
+
         static void Main(string[] args)
         {
             // Get user ip address
-            Console.Write("Ip: ");
-            string ip = Console.ReadLine();
+            string ip;
+            if (File.Exists("ip.txt"))
+            {
+                ip = File.ReadAllText("ip.txt").Trim();
+            }
+            else if (args.Length > 0)
+            {
+                ip = args[0];
+            }
+            else
+            {
+                Console.Write("Ip: ");
+                ip = Console.ReadLine();
+            }
 
             // Setup discord
             DiscordController discord = new DiscordController();
@@ -27,7 +47,9 @@ namespace SmashDiscordRichPresence
                 Console.WriteLine("Failed to connect.");
                 return;
             }
-            int player1 = 0, player2 = 0, stage = 0, mode = 0;
+            
+            int player1 = 0, player2 = 0, player3 = 0, player4 = 0, player5 = 0, player6 = 0, player7 = 0, player8 = 0;
+            int stage = 0, mode = 0;
 
             while (true)
             {
@@ -36,6 +58,12 @@ namespace SmashDiscordRichPresence
                 {
                     player1 = (int)gecko.peek(0x1098EDEB) & 0xFF;
                     player2 = (int)gecko.peek(0x1098EE6B) & 0xFF;
+                    player3 = (int)gecko.peek(0x1098EEEB) & 0xFF;
+                    player4 = (int)gecko.peek(0x1098EF6B) & 0xFF;
+                    player5 = (int)gecko.peek(0x1098EFEB) & 0xFF;
+                    player6 = (int)gecko.peek(0x1098F06B) & 0xFF;
+                    player7 = (int)gecko.peek(0x1098F0EB) & 0xFF;
+                    player8 = (int)gecko.peek(0x1098F16B) & 0xFF;
                     stage = (int)gecko.peek(0x1097577F) & 0xFF;
                     mode = (int)gecko.peek(0x1098B2AB) & 0xFF;
                 }
