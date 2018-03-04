@@ -89,6 +89,7 @@ namespace SmashDiscordRichPresence
             { 0x08, "Pyrosphere" },
             { 0x36, "Pyrosphere Ω" },
             { 0x23, "Norfair" },
+            { 0x51, "Norfair Ω" },
             { 0x09, "Wolly World" },
             { 0x37, "Wolly World Ω" },
             { 0x24, "Yoshi's Island" },
@@ -190,9 +191,9 @@ namespace SmashDiscordRichPresence
 
         public static Dictionary<int, string> CHARACTER_NAMES = new Dictionary<int, string>()
         {
-            { 0x00, "Mii Fighter" },
-            { 0x01, "Mii Swordsman" },
-            { 0x02, "Mii Gunner" },
+            { 0x01, "Mii Fighter" },
+            { 0x02, "Mii Swordsman" },
+            { 0x03, "Mii Gunner" },
             { 0x04, "Mario" },
             { 0x0C, "Luigi" },
             { 0x0F, "Peach" },
